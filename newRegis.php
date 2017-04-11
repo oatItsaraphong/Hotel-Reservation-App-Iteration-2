@@ -80,6 +80,7 @@
         $AddedTo = mysqli_query($link, $toAdd);
         if($AddedTo != false)
         {
+            echo "<br>";
             echo "User have been Added<br>";
             echo "UserName: ". $userToPutUser. "<br>";
             echo "Access Level: Basic";

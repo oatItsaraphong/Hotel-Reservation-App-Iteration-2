@@ -53,15 +53,15 @@
     $level = 0;
     if($_SESSION['permissionCode'] == 'register'){
         $level = 1;
-        echo "normal";
+        //echo "normal";
     }
     else if ($_SESSION['permissionCode'] == 'manager'){
         $level = 2;
-        echo "manga";
+        //echo "manga";
     }
     else if ($_SESSION['permissionCode'] == 'maintainance'){
         $level = 3;
-        echo "main";
+        //echo "main";
     }
     else{
         echo "Error Invalid permission";
@@ -82,7 +82,7 @@
         else if ($level == 2){
             echo "Change to: Manager level<br>";
         }else if ($level == 3){
-            echo "Change to: maintainance level<br>";
+            echo "Change to: Maintainance level<br>";
         }
         else{
             echo "Error Invalid Database Modify";

@@ -65,8 +65,8 @@ session_start();
 		        <div class="form-group">
 		            <label for="Pass2">Level:</label><br>
 		           	<input type="radio" name="levelPermission" value="register" checked>Register<br>
-		           	<input type="radio" name="levelPermission" value="manager" checked>Manager<br>
-		           	<input type="radio" name="levelPermission" value="maintainance" checked>Maintain<br>
+		           	<input type="radio" name="levelPermission" value="manager">Manager<br>
+		           	<input type="radio" name="levelPermission" value="maintainance">Maintain<br>
 		        </div>
 
 			</form>
