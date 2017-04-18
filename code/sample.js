@@ -1,5 +1,9 @@
 $(function(){
 
+  $('#AddGuestBTN').click(function(){
+    window.load('Login.php');
+  });
+
 
 	$('#AddGuestBTN').click(function(){
 		console.log("Guest");

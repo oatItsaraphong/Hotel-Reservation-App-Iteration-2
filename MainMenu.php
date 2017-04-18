@@ -80,9 +80,9 @@ session_start();
 		<button type="button" id="CheckOutBTN" class="btn-block btn btn-danger">Check Out</button>
 
 		<br>
-		<button type="button" id="AddGuestBTN" class="btn-block fit btn btn-success">Add Guest</button>
-		<button type="button" id="SearchAllGuestBTN" class="btn-block btn btn-primary">SearchAllGuest</button>
-		<button type="button" id="SearchAllRoomBTN" class="btn-block btn btn-primary">Search All Room</button>
+		<button type="button" id="AddGuestBTN" class="btn-block fit btn btn-primary">Add Guest</button>
+		<button type="button" id="SearchAllGuestBTN" class="btn-block btn btn-info">SearchAllGuest</button>
+		<button type="button" id="SearchAllRoomBTN" class="btn-block btn btn-info">Search All Room</button>
 
 
 		<?php
@@ -98,12 +98,16 @@ session_start();
 
 				echo "<button type='button' id='RegisBTN' class='btn-block btn btn-primary'>Register New Employee</button>";
 
-				echo "<button type='button' id='PermissionBTN' class='btn-block btn btn-primary'>Change Employee Access Level</button>";
+				echo "<button type='button' id='PermissionBTN' class='btn-block btn btn-primary'>Manage Employee Permission Level</button>";
 				}
 
 				
 			}
+
+
 		?>
+		<br>
+		<a href="Login.php" type="button" id="LogoutBTN" class="btn-block btn btn-danger">Log Out</a>
 	</div>
 
 

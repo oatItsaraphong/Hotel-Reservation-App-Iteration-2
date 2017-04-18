@@ -11,17 +11,12 @@
 
 <body>
     <div id="wrapper">
-        <table width=100% height=30 bgcolor="#555555"><tr></tr></table>
-        <form>
-        <input class="buttonMain" type="button" onClick="window.location.href='DateHistory.php'"
-                value="Main"/>
-        </form>
 
      	<h2> Check Room</h2>
 	<br>
 
 <?php
-	echo "Enter Update";
+	//echo "Enter Update";
 	//update the database
 	require "configHotel.php";
 	$link = LoginDB($_SESSION['User'],$_SESSION['Pass']);
@@ -46,7 +41,7 @@
 		{
 			while($row = mysqli_fetch_assoc($result))
 			{
-				echo "There are ".$numEle."element got update<br><br>";
+				echo "There are ".$numEle." element got update<br><br>";
 				
 				
 				$moving ="INSERT INTO ResevHistoryTable (ResevHisID, ResevID, HisCheckInDate, HisCheckOutDate,
@@ -70,14 +65,14 @@
 				$movingQ = mysqli_query($link, $moving);
 				if($movingQ != false)
 				{
-					echo "Moving Successful<br>";
+					//echo "Moving Successful<br>";
 					$deletingQ = mysqli_query($link, $deleting);
 					
 					if($deletingQ == false)
 					{
 						echo "Error deleting record<br>";
 					}
-					echo "Deleting Successful<br>";
+					//echo "Deleting Successful<br>";
 				}
 				else
 				{

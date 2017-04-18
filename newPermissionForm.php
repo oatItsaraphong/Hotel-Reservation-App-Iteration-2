@@ -92,8 +92,6 @@
     else{
         echo "Fail To update";
     }
-
- 
     
 ?>
 <script src="code/sample.js" type="text/javascript"></script>
