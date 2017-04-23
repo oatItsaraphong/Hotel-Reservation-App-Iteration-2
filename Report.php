@@ -1,5 +1,6 @@
 <?php
 	session_start();
+
 ?>
 <html>
 <head>
@@ -95,12 +96,12 @@
 
 		<form action='DateHistory.php' target='_blank' method='post'>
 		<table>
-			<tr>
+			<!--<tr>
 				<td>Report by</td>
 				<td><input type='radio' name='CDate' value='HisCheckInDate'>Check In
 				<br><input type='radio' name='CDate' value='HisCheckOutDate'>Check Out</td>		
 				<td></td>
-			</tr>
+			</tr>-->
 			<tr>
 				<td>--------</td></tr><tr>
 				<td>Start Date</td>

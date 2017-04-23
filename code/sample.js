@@ -1,8 +1,8 @@
 $(function(){
 
-  $('#AddGuestBTN').click(function(){
-    window.load('Login.php');
-  });
+  //$('#AddGuestBTN').click(function(){
+  //  window.load('Login.php');
+  //});
 
 
 	$('#AddGuestBTN').click(function(){
@@ -20,6 +20,11 @@ $(function(){
 		$('.MainBODY').load('CheckInSnip.php');
 	});
 
+  $('#roomStatusBTN').click(function(){
+    console.log("In");
+    $('.MainBODY').load('ChangeRoomStatus.php');
+  });
+
 	$('#CheckOutBTN').click(function(){
 		console.log("Out");
 		$('.MainBODY').load('CheckOutSnip.php');
@@ -32,6 +37,14 @@ $(function(){
 	$('#SearchAllGuestBTN').click(function(){
 		$('.MainBODY').load('SearchAllGuest.php');
 	});
+
+  $('#TodayActivityBTN').click(function(){
+    $('.MainBODY').load('todayAct.php');
+  });
+
+  $('#addRoomMainBTN').click(function(){
+    $('.MainBODY').load('AddNewRoom.html');
+  });
 
 	$('#ReportBTN').click(function(){
 		$('.MainBODY').load('Report.php');
@@ -46,6 +59,15 @@ $(function(){
 		$('.MainBODY').load('Register.html');
 	});
 
+  $('#roomMainBTN').click(function(){
+    //console.log("TEst");
+    $('.MainBODY').load('MaintanceRoomNum.php');
+  });
+
+  $('#RoomEditBTN').click(function(){
+    //console.log("TEst");
+    $('.MainBODY').load('EditRoomDetail.php');
+  });
 	
 
 
@@ -76,6 +98,26 @@ $(function(){
 
     	});
     });
+
+    /*
+    $('.RoomEditBTN').click(function(e){
+      e.preventDefault();
+      //console.log('send');
+      //echo "Bule";
+      $.ajax({
+        type: "POST",
+          url: "EditRoomDetail.php",
+          data: $('.formRoomEdit').serialize(),
+          success: function() {
+          //alert('success');
+          $('.MainBODY').empty();
+          $('.MainBODY').load('EditRoomDetail.php');
+
+       }
+
+      });
+    });
+    */
 
 
     // change employee's access level
@@ -122,6 +164,40 @@ $(function(){
        		}
     	});
     });
+
+    $('#roomStatusBTNCon').click(function(e){
+      e.preventDefault();
+      //console.log($('#CancelForm').serialize());
+      //echo "Bule";
+      $.ajax({
+          type: "POST",
+          url: "RoomStatusUpdate.php",
+          data: $('#roomStatusForm').serialize(),
+          success: function() {
+          //alert('success');
+            $('.MainBODY').empty();
+            $('.MainBODY').load('RoomStatusUpdate.php');
+          }
+      });
+    });
+
+/*
+    $('#EditRoomDetailBTN').click(function(e){
+      e.preventDefault();
+      //console.log($('#CancelForm').serialize());
+      //echo "Bule";
+      $.ajax({
+          type: "POST",
+          url: "EditRoomDetailConfirm.php",
+          data: $('#roomStatusForm').serialize(),
+          success: function() {
+          //alert('success');
+            $('.MainBODY').empty();
+            $.load('EditRoomDetailConfirm.php');
+          }
+      });
+    });
+    */
 
 
 });

@@ -23,6 +23,7 @@
 	
 	header('Content-Type: text/html; charset=utf8');
 	require "configHotel.php";
+	BackToMainBTN();
 
 	$link = LoginDB($_SESSION['User'],$_SESSION['Pass']);
 	if($link == 0)
@@ -39,10 +40,11 @@
 	require "hisFunction.php";
 	mysqli_set_charset($link,"utf8");
 	
-	if($_POST[CDate] != NULL)
+
+	if(true)
 	{
 		
-		$DateType = $_POST[CDate];
+		$DateType = 'HisCheckOutDate';
 		$Min = date('Y-m-d', strtotime($_POST[DateMin]));
 		$Max = date('Y-m-d', strtotime($_POST[DateMax]));
 		echo "<h3>Between ".$Min." and ".$Max." (inclusive)</h3>";

@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Add Room Detail</title>
+<meta name="AddContent-Type" content="text/html; charset=utf8"/>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class='page-header'><h1>Add New Room</h1></div>
+
+
+<div class='page-header'></div>
+<div class="col-md-6 col-sm-0 col-lg-8">
+<div>
+	<form id ='formR' action='AddNewRoomConfirm.php' method="POST">
+
+        <div class="form-group">
+            <label for="AddRoomNum1">Room Number:</label>
+            <input type="text" class="form-control" name="AddRoomNum1" placeholder="Room Number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="AddRPrice">Price:</label>
+            <input type='text' class='form-control' name="AddRPrice" placeholder="1000" required="true">
+        </div>
+
+        <div class="form-group">
+            <label for="AddNumBed">Number of Beds:</label>
+            <input type="text" class="form-control" name="AddNumBed" value =2  required="true">
+        </div>
+
+        <div class="form-group">
+            <label for="AddBed">Bed Type:</label>
+            <input type="text" class="form-control" name="AddBed" placeholder="Queen" required="true">
+        </div>
+
+        <div class="form-group">
+            <label for="AddLocation">View:</label>
+            <input type="text" class="form-control" name="AddLocation"  placeholder="Street View" required="true">
+        </div>
+
+        <div class="form-group container">
+            <div class='row'>
+            <div class='col'>
+            <label for="AddrStatusE">Status: </label></div></div>
+
+            <div class='row'>
+                <div class='col-lg-2'>
+                    <input type='radio' name='AddrStatusE' value='Good' checked="true"> Available
+                </div>
+                <div class='col-lg-2'>
+                    <input type='radio' name='AddrStatusE' value='Fix'> Need maintanance   
+                </div>
+                <div class='col-lg-2'>
+                    <input type='radio' name='AddrStatusE' value='Inactive'> Inactive   
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group container">
+            <div class='row'>
+            <div class='col'>
+            <label for="AddBal">Balcony: </label></div></div>
+
+            <div class='row'>
+                <div class='col-lg-3'>
+                    <input type='radio' name='AddBalVal' value='1' > Have
+                </div>
+                <div class='col-lg-3'>
+                    <input type='radio' name='AddBalVal' value='0' checked="true"> Have Not
+                </div>
+            </div>
+        </div> 
+
+        <div class="form-group container">
+            <div class='row'>
+            <div class='col'>
+            <label for="AddBal">Kitchen: </label></div></div>
+
+            <div class='row'>
+                <div class='col-lg-3'>
+                    <input type='radio' name='AddKitVal' value='1' > Have
+                </div>
+                <div class='col-lg-3'>
+                    <input type='radio' name='AddKitVal' value='0' checked="true"> Have Not
+                </div>
+            </div>
+        </div> 
+
+
+        <div class="form-group">
+            <label for="AddOtherCom">Other:</label>
+            <input type="text" class="form-control" name="AddOtherCom"  placeholder="Comment">
+        </div>
+		
+        <input type="submit" id="AddRoomDetailBTN" class="btn btn-block btn-Info" value="Add Room">
+	</form>
+    
+</div>
+</div>
+    <script src="code/sample.js" type="text/javascript"></script>
+</body>
+</html>

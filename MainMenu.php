@@ -73,7 +73,10 @@ session_start();
 	?>
 	</div>
 
-	<div class="col-sm-6 col-md-4 col-lg-3 MainNAV">
+	<div class="col-sm-4 col-md-3 col-lg-3 MainNAV black">
+
+		<button type="button" id="TodayActivityBTN" class="btn-block btn btn-info">Today Activity</button>
+		<br>
 		
 		<button type="button" id="ReservationBTN" class="btn-block btn btn-primary">Reservation</button>
 		<button type="button" id="CheckInBTN" class="btn-block btn btn-success">Check In</button>
@@ -99,11 +102,15 @@ session_start();
 				echo "<button type='button' id='RegisBTN' class='btn-block btn btn-primary'>Register New Employee</button>";
 
 				echo "<button type='button' id='PermissionBTN' class='btn-block btn btn-primary'>Manage Employee Permission Level</button>";
+
+				echo "<button type='button' id='roomStatusBTN' class='btn-block btn btn-primary'>Change Room Availability</button>";
+
+				echo "<button type='button' id='roomMainBTN' class='btn-block btn btn-primary'>Room Need Maintance</button>";
+
+				echo "<button type='button' id='addRoomMainBTN' class='btn-block btn btn-primary'>Add New Room</button>";
 				}
-
-				
+	
 			}
-
 
 		?>
 		<br>

@@ -4,7 +4,7 @@ session_start();
 
 <html>
 <head>
-<title>BaseHotel</title>
+<title>Need to Fix</title>
 <meta name="Content-Type" content="text/html; charset=utf8"/>
 <link rel="stylesheet" type="text/css" href="theme.css">
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -38,22 +38,21 @@ session_start();
 	require "functionUse.php";
 	mysqli_set_charset($link,"utf8");
 
-	$AllRoom = "SELECT * FROM RoomTable WHERE RoomStatus = 'Good'";
+	$AllRoom = "SELECT RoomIDNum  FROM RoomTable WHERE RoomStatus = 'Fix'";
 
 	$result = mysqli_query($link,$AllRoom);
-	$per = CheckPermission($_SESSION['User'],$_SESSION['Pass'],$link);
 
 	if($result != false)
 	{
             if(mysqli_num_rows($result) > 0)
             {
-                echo "<h3>All the room</h3><br>";
+                echo "<h3>Need Maintance</h3><br>";
 
                 //echo "<table border=1px>";
                 while($row = mysqli_fetch_array($result))
                 {
                 	//echo "A";
-                	PrintRoom($row,$per);
+                	PrintRoomMain($row);
                 }
             }
 	}

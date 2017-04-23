@@ -1,10 +1,57 @@
 <?php
 
+function PrintCustomerToday($Item, $param){
 
-function PrintRoom($Item){
 
-    echo "<h3>Room Number: ".$Item[RoomIDNum];
-    echo "</h3><br>";
+    echo "<div class ='col-lg-12'>";
+    echo "<div class='panel panel-default '>";
+    echo "<div class='panel-heading'><h4>Guest: ".$Item[GuestName];
+    echo "</h4></div>";
+
+    echo "<div class='panel-body'>";
+    echo "<div class='row'>";
+    echo "<div class='col-lg-5'>";
+    echo "ReservationID: ".$Item[ReservationID];
+    echo "</div>";
+    echo "<div class='col-lg-5'>";
+    echo "Status: ".$Item[Statue];
+    echo "</div>";
+    echo "<div class='col-lg-2'>";
+    echo "</div>";
+    echo "</div>";
+
+    echo "<div class='row'>";
+    echo "<div class='col-lg-5'>";
+    echo "Check In: ".$Item[CheckInDate];
+    echo "</div>";
+    echo "<div class='col-lg-5'>";
+    echo "Check Out: ".$Item[CheckOutDate];
+    echo "</div>";
+    echo "<div class='col-lg-2'>";
+
+    if($param == 1)
+    {
+        echo "<form action='CheckInConfirm.php' method='post'>";
+        echo "<input value=".$Item[ReservationID]." name='RsvpID' hidden></input>";
+        echo "<input type='submit' class='btn btn-Danger pull-right' value='Check In'>";
+        echo "</form>";
+    }
+
+    echo "</div>";
+    echo "</div>";
+
+    echo "</div></div></div>";
+}
+
+function PrintRoom($Item, $Permission){
+
+    echo "<div class='col-lg-4 '>";
+    echo "<div class='panel panel-default '>";
+    echo "<div class='panel-heading'><h4>Room Number: ".$Item[RoomIDNum];
+    echo "</h4></div>";
+    echo "<div class='panel-body'>";
+    //echo "<div class='wrap'>";
+
     echo "Price: ".$Item[RoomPrice];
     echo "<br>";
     echo "Number of Bed: ".$Item[NumberOfBed];
@@ -18,7 +65,41 @@ function PrintRoom($Item){
     echo "Balcony: ".ZeroToNo($Item[Balcony]);
     echo "<br>";
     echo "Other: ".$Item[Special];
-    echo "<br><br>";
+    echo "<br>";
+
+    
+
+    if($Permission == 2)
+    {
+
+        //echo "Price: ".$Item[RoomIDNum];
+        echo "<form action='EditRoomDetail.php' class='formRoomEdit' method='post'>";
+        echo "<input value=".$Item[RoomIDNum]." name='RoomToEdit' hidden></input>";
+        echo "<input type='submit' class='RoomEditBTN btn btn-Danger pull-right' value='Edit Room Info'>";
+
+        echo "</form>";
+
+    }
+
+    echo "</div></div>";
+    echo "</div>";
+}
+
+function PrintRoomMain($Item){
+    echo "<div class='panel panel-success'>";
+
+     echo "<div class='panel-body'>";
+    echo "<h4>Room Number: ".$Item[RoomIDNum];
+    echo "</h4>";
+    
+
+    echo "<form method='post'>";
+        echo "<input value='".Item[RoomIDNum]."' name='RoomNumMain' hidden></input>";
+        echo "<input id='AddMainInfoBTN' type='button' class='btn btn-Danger pull-right' value='Add Info'>";
+
+    echo "</form>";
+
+    echo "</div></div>";
 }
 
 function ZeroToNo($inItem){
