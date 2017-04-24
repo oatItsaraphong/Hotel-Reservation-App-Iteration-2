@@ -105,6 +105,10 @@ function CheckPermission($inUser2, $inPass2, $inLink2){
 		{
 			return 3;
 		}
+		else if($out['Permission'] == 4)
+		{
+			return 4;
+		}
 		else
 		{
 			//Presant Code 1

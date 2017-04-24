@@ -2,7 +2,6 @@
 
 function PrintCustomerToday($Item, $param){
 
-
     echo "<div class ='col-lg-12'>";
     echo "<div class='panel panel-default '>";
     echo "<div class='panel-heading'><h4>Guest: ".$Item[GuestName];
@@ -69,7 +68,7 @@ function PrintRoom($Item, $Permission){
 
     
 
-    if($Permission == 2)
+    if(($Permission == 2) Or ($Permission == 4))
     {
 
         //echo "Price: ".$Item[RoomIDNum];
@@ -85,21 +84,50 @@ function PrintRoom($Item, $Permission){
     echo "</div>";
 }
 
-function PrintRoomMain($Item){
-    echo "<div class='panel panel-success'>";
+function PrintRoomMain($Item, $permission){
 
-     echo "<div class='panel-body'>";
-    echo "<h4>Room Number: ".$Item[RoomIDNum];
-    echo "</h4>";
+    echo "<div class ='col-lg-12'>";
+    echo "<div class='panel panel-default '>";
+    echo "<div class='panel-heading'><h4>Room Number: ".$Item[RoomToFix];
+    echo "</h4></div>";
+
+    echo "<div class='panel-body'>";
+    echo "<div class='row'>";
+    echo "<div class='col-lg-6'>";
+    echo "Maintenance Type: ".$Item[MainType];
+    echo "</div>";
+    echo "<div class='col-lg-6'>";
+    echo "Estimate Cost: ".$Item[MainCost];
+    echo "</div>";
+    echo "</div>";
+
+    echo "<div class='row'>";
+    echo "<div class='col-lg-6'>";
+    echo "Start Date: ".$Item[StartDate];
+    echo "</div>";
+    echo "<div class='col-lg-6'>";
+    echo "End Dat: ".$Item[EndDate];
+    echo "</div>";
+    echo "</div>";
+
+    echo "<div class='row'>";
+    echo "<div class='col-lg-10'>";
+    echo "Start Date: ".$Item[MainDetail];
+    echo "</div>";
+    echo "<div class='col-lg-2'>";
     
+    if($permission >= 3)
+    {
+        echo "<form action='MainForm.php' method='post'>";
+        echo "<input value=".$Item[MainID]." name='MainDetailID' hidden></input>";
+        echo "<input type='submit' class='btn btn-block btn-Danger pull-right' value='Edit Detail'>";
+        echo "</form>";
+    }
 
-    echo "<form method='post'>";
-        echo "<input value='".Item[RoomIDNum]."' name='RoomNumMain' hidden></input>";
-        echo "<input id='AddMainInfoBTN' type='button' class='btn btn-Danger pull-right' value='Add Info'>";
+    echo "</div>";
+    echo "</div>";
 
-    echo "</form>";
-
-    echo "</div></div>";
+    echo "</div></div></div>";
 }
 
 function ZeroToNo($inItem){

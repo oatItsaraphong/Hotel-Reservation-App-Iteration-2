@@ -50,7 +50,7 @@ session_start();
 		<div>
 		<?php
 			$per = CheckPermission($_SESSION['User'],$_SESSION['Pass'],$link);
-			if($per == 2)
+			if(($per == 2) OR ($per==4))
 			{
 		?>
 			<div class="col-md-4 col-sm-0 col-lg-5">

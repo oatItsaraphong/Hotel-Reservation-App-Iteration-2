@@ -70,11 +70,17 @@ session_start();
 	$_SESSION["Link"] = $link;
 
 
+	$per = CheckPermission($_SESSION['User'],$_SESSION['Pass'],$link);
 	?>
 	</div>
 
 	<div class="col-sm-4 col-md-3 col-lg-3 MainNAV black">
 
+	<?php
+		//for everyone except maintenance
+		if(($per == 1) Or ($per == 2) Or ($per ==4))
+		{
+	?>
 		<button type="button" id="TodayActivityBTN" class="btn-block btn btn-info">Today Activity</button>
 		<br>
 		
@@ -89,28 +95,40 @@ session_start();
 
 
 		<?php
-			$per = CheckPermission($_SESSION['User'],$_SESSION['Pass'],$link);
-			if($per >= 1)
+		} //end if for the main Fincitn
+			//$per = CheckPermission($_SESSION['User'],$_SESSION['Pass'],$link);
+
+		//for Manager Only
+		if(($per == 2) Or ($per ==4))
 			{
 				echo "<br><br>";
 				echo "<br><button type='button' id='CancelBTN' class='btn-block btn btn-danger'>Cancel Reservation</button>";
 
-				//With in the hotel use
-				if($per == 2){
 				echo "<button type='button' id='ReportBTN' class='btn-block btn btn-primary'>Report By Date</button>";
 
 				echo "<button type='button' id='RegisBTN' class='btn-block btn btn-primary'>Register New Employee</button>";
 
 				echo "<button type='button' id='PermissionBTN' class='btn-block btn btn-primary'>Manage Employee Permission Level</button>";
 
+				
+			}
+
+			//for Manager and Maintenance
+			if(($per == 3) Or ($per == 2) Or($per ==4))
+			{
 				echo "<button type='button' id='roomStatusBTN' class='btn-block btn btn-primary'>Change Room Availability</button>";
 
+			}
+
+
+			//for Maintenance only
+			if(($per == 3) Or ($per ==4))
+			{
 				echo "<button type='button' id='roomMainBTN' class='btn-block btn btn-primary'>Room Need Maintance</button>";
 
 				echo "<button type='button' id='addRoomMainBTN' class='btn-block btn btn-primary'>Add New Room</button>";
-				}
-	
 			}
+	
 
 		?>
 		<br>

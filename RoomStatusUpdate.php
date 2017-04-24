@@ -54,26 +54,67 @@
 
     }
 
-    //echo $_SESSION['RoomID'];
-    //echo $_SESSION['rStatus'];
-
-       //echo $userToPutName;
-    $upQuery = "UPDATE RoomTable SET RoomStatus = '".$_SESSION['rStatus']."' WHERE RoomTable.RoomIDNum = ".$_SESSION['RoomID'];
-
-    //$upQuery = "UPDATE EmployeeTable SET Permission = '".$level."' WHERE EmployeeTable.UserName = '".$_SESSION['userPermission']."'";
-    //echo $topID;
-    //echo $upQuery;
-    $result = mysqli_query($link,$upQuery);
-    //echo $result;
-    if($result != false)
-    {   
-        echo "Update Successful<br>";
-
+    $test = "SELECT ActiveStatus From MaintenanceTable Where RoomToFix = ".$_SESSION['RoomID']." AND ActiveStatus = 1";
+    $testRe = mysqli_query($link,$test);
+    //echo mysqli_num_rows($testRe);
+    if(mysqli_num_rows($testRe) > 0)
+    {
+            //echo $row[RoomStatus];
+            //echo $_SESSION[rStatus];
+            echo "Room already is currently in the update status";
+            exit();
     }
-    else{
-        echo "Fail To update";
+    else
+    {
+
+        $upQuery = "UPDATE RoomTable SET RoomStatus = '".$_SESSION['rStatus']."' WHERE RoomTable.RoomIDNum = ".$_SESSION['RoomID'];
+
+        //$upQuery = "UPDATE EmployeeTable SET Permission = '".$level."' WHERE EmployeeTable.UserName = '".$_SESSION['userPermission']."'";
+        //echo $topID;
+        //echo $upQuery;
+        $result = mysqli_query($link,$upQuery);
+        //echo $result;
+        if($result != false)
+        {   
+            echo "Update Successful<br>";
+
+        }
+        else{
+            echo "Fail To update";
+        }
+
+    
+        if($_SESSION['rStatus'] == 'Fix')
+        {
+            //echo "DDd -- <br>";
+            //Get Today Value    
+            $Today = getDate();
+            $date = $Today[year] +"-" + $Today[mon] + "-" + $Today[mday];
+            $MoIn = date('Y-m-d', strtotime($date));
+
+            $AddIn = "INSERT INTO `MaintenanceTable` (`MainID`, `MainType`, `MainCost`, `StartDate`, `EndDate`, `MainDetail`, `RoomToFix`, `ActiveStatus`) VALUES (NULL,'"
+                    .'Unknown'."','" 
+                    .'0'."','"
+                    .$MoIn."','"
+                    .$MoIn."','"
+                    ."Unknown"."','"
+                    .$_SESSION['RoomID']."','"
+                    .'1'."')";
+            
+            $runAdd = mysqli_query($link,$AddIn);
+
+            if($runAdd != false)
+            {
+                echo "Update Maintenance Detail";
+            }
+            else{
+                echo "Fail to Update Maintenance Detail";
+            }
+            
+        }
     }
     
+     
 ?>
 <script src="code/sample.js" type="text/javascript"></script>
 </div>
