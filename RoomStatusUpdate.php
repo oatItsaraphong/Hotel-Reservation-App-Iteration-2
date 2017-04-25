@@ -1,13 +1,18 @@
 
 <?php
     session_start();
-    
+    /*
     if($_POST['roomNumStatus'] != NULL){
         $_SESSION['RoomID'] = $_POST['roomNumStatus'];
         $_SESSION['rStatus'] = $_POST['rStatus'];
         //echo "GGGg";
         exit(); 
     }
+    */
+
+    //test full function
+    $_SESSION['RoomID'] = $_POST['roomNumStatus'];
+    $_SESSION['rStatus'] = $_POST['rStatus'];
 
 ?>
 
@@ -54,19 +59,6 @@
 
     }
 
-    $test = "SELECT ActiveStatus From MaintenanceTable Where RoomToFix = ".$_SESSION['RoomID']." AND ActiveStatus = 1";
-    $testRe = mysqli_query($link,$test);
-    //echo mysqli_num_rows($testRe);
-    if(mysqli_num_rows($testRe) > 0)
-    {
-            //echo $row[RoomStatus];
-            //echo $_SESSION[rStatus];
-            echo "Room already is currently in the update status";
-            exit();
-    }
-    else
-    {
-
         $upQuery = "UPDATE RoomTable SET RoomStatus = '".$_SESSION['rStatus']."' WHERE RoomTable.RoomIDNum = ".$_SESSION['RoomID'];
 
         //$upQuery = "UPDATE EmployeeTable SET Permission = '".$level."' WHERE EmployeeTable.UserName = '".$_SESSION['userPermission']."'";
@@ -112,9 +104,11 @@
             }
             
         }
-    }
+
+
     
-     
+    echo "<br>";
+    BackToMainBTN();
 ?>
 <script src="code/sample.js" type="text/javascript"></script>
 </div>

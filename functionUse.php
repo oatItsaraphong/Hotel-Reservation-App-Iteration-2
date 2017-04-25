@@ -1,5 +1,75 @@
 <?php
 
+function RoomChange($room){
+
+    echo "<div class ='col-lg-12'>";
+    echo "<div class='panel panel-default '>";
+
+    echo "<div class='panel-body'>";
+    echo "<div class='row'>";
+    echo "<div class='col-lg-3'>";
+    echo "Room Number: ".$room[RoomIDNum];
+    echo "</div>";
+
+    echo "<form action='RoomStatusUpdate.php' method='post'>";
+        echo "<div class='col-lg-7'>";
+
+
+        echo "<div class=form-group>";
+        echo "<label for='RoomID'>Status: </label>";
+        if($room[RoomStatus] == 'Good'){
+            echo "<input type='radio' name='rStatus' value='Good' checked='true'> Available";
+            echo "  ";
+            echo "<input type='radio' name='rStatus' value='Fix'> Need Maintence";
+            echo "  ";
+            echo "<input type='radio' name='rStatus' value='Inactive'> Inactive";
+        }
+        else if($room[RoomStatus] == 'Fix'){
+            echo "<input type='radio' name='rStatus' value='Good'> Available";
+            echo "  ";
+            echo "<input type='radio' name='rStatus' value='Fix' checked='true'> Need Maintence";
+            echo "  ";
+            echo "<input type='radio' name='rStatus' value='Inactive'> Inactive";
+        }
+        else if($room[RoomStatus] == 'Inactive'){
+            echo "<input type='radio' name='rStatus' value='Good'> Available";
+            echo "  ";
+            echo "<input type='radio' name='rStatus' value='Fix' > Need Maintence";
+            echo "  ";
+            echo "<input type='radio' name='rStatus' value='Inactive' checked='true'> Inactive";
+        }
+
+        echo "</div>";
+        echo "</div>";
+
+
+        echo "<div class='col-lg-2'>";
+        echo "<input value=".$room[RoomIDNum]." name='roomNumStatus' hidden></input>";
+        echo "<input type='submit' class='btn btn-block btn-Danger pull-right' value='Change Status'></input>";
+        echo "</div>";
+
+    echo "</form>";
+
+    /*
+    echo "<div class='col-lg-7'>";
+    echo "Current Status: ".$room[RoomStatus];
+    echo "</div>";
+
+    echo "<div class='col-lg-2'>";
+
+    echo "<form action='RoomStatusUpdate.php' method='post'>";
+    echo "<input value=".$room[RoomIDNum]." name='roomNumStatus' hidden></input>";
+    echo "<input value=".$room[RoomIDNum]." name='rStatus' hidden></input>";
+    echo "<input type='submit' class='btn btn-block btn-Danger pull-right' value='Change Status'></input>";
+    echo "</form>";
+    */
+
+    echo "</div>";
+    echo "</div>";
+    echo "</div></div></div>";
+
+}
+
 function PrintCustomerToday($Item, $param){
 
     echo "<div class ='col-lg-12'>";
@@ -112,7 +182,7 @@ function PrintRoomMain($Item, $permission){
 
     echo "<div class='row'>";
     echo "<div class='col-lg-10'>";
-    echo "Start Date: ".$Item[MainDetail];
+    echo "Detail: ".$Item[MainDetail];
     echo "</div>";
     echo "<div class='col-lg-2'>";
     

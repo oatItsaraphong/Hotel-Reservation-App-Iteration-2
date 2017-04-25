@@ -81,7 +81,7 @@ session_start();
 		if(($per == 1) Or ($per == 2) Or ($per ==4))
 		{
 	?>
-		<button type="button" id="TodayActivityBTN" class="btn-block btn btn-info">Today Activity</button>
+		<button type="button" id="TodayActivityBTN" class="btn-block btn btn-info">Today's Activity</button>
 		<br>
 		
 		<button type="button" id="ReservationBTN" class="btn-block btn btn-primary">Reservation</button>
@@ -110,11 +110,11 @@ session_start();
 
 				echo "<button type='button' id='PermissionBTN' class='btn-block btn btn-primary'>Manage Employee Permission Level</button>";
 
-				
+				echo "<button type='button' id='addRoomMainBTN' class='btn-block btn btn-primary'>Add New Room</button>";
 			}
 
 			//for Manager and Maintenance
-			if(($per == 3) Or ($per == 2) Or($per ==4))
+			if(($per == 3) Or ($per == 2) Or ($per ==4))
 			{
 				echo "<button type='button' id='roomStatusBTN' class='btn-block btn btn-primary'>Change Room Availability</button>";
 
@@ -124,9 +124,8 @@ session_start();
 			//for Maintenance only
 			if(($per == 3) Or ($per ==4))
 			{
-				echo "<button type='button' id='roomMainBTN' class='btn-block btn btn-primary'>Room Need Maintance</button>";
+				echo "<button type='button' id='roomMainBTN' class='btn-block btn btn-primary'>Maintenance List</button>";
 
-				echo "<button type='button' id='addRoomMainBTN' class='btn-block btn btn-primary'>Add New Room</button>";
 			}
 	
 

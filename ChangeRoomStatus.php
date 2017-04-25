@@ -18,13 +18,59 @@
 </head>
 
 <body>
+
+    <?php
+    $User = $_SESSION['User'];
+    $Pass = $_SESSION['Pass'];
+    
+
+    header('Content-Type: text/html; charset=utf8');
+    require "configHotel.php";
+    $link = LoginDB($User,$Pass);
+    if($link == 0)
+    {
+        echo "Wrong UserName";
+        echo "<a href='index.php' type='button' class='btn-block btn btn-warning'>Back to Login</a>";
+        exit();
+
+    }
+
+    require "functionUse.php";
+    mysqli_set_charset($link,"utf8");
+
+?>
+
     <div id="wrapper">
         <h2> Change Room Status</h2>
         <br>
-        <form id="roomStatusForm" method="post">
-            <div class='panel panel-warning'>
-                <div class='panel-heading'> Change Room Status </div>
-                <div class='panel-body'>
+
+                <?php
+
+                    $AllRoom = "SELECT RoomStatus, RoomIDNum FROM RoomTable";
+
+                    $result = mysqli_query($link,$AllRoom);
+                    //$per = CheckPermission($_SESSION['User'],$_SESSION['Pass'],$link);
+
+                    if($result != false)
+                    {
+                            if(mysqli_num_rows($result) > 0)
+                            {
+                                echo "<h3>All the room</h3><br>";
+
+                                //echo "<table border=1px>";
+                                while($row = mysqli_fetch_array($result))
+                                {
+                                    //echo "A";
+                                    RoomChange($row);
+                                }
+                            }
+                    }
+
+
+                       // BackToMainBTN();
+                ?>
+
+                    <!--
                     <div class="form-group">
                         <label for="RoomID">Room Number: </label>
                         <input type="number" class="form-control" name="roomNumStatus" placeholder="Room Number" required>
@@ -37,10 +83,11 @@
                             <br><input type='radio' name='rStatus' value='Inactive'> Inactive
                             </td>
                     </div>
-                    <input type='button' id="roomStatusBTNCon" class='btn btn-block btn-warning' value="Cancel">
-                </div>
-            </div>
-        </form>
+                    <input type='button' id="roomStatusBTNCon" class='btn btn-block btn-warning' value="Change Room Status">
+                    -->
+
+
+
         <table width=100% height=30 bgcolor="blue"><tr></tr></table>
 
     </div>

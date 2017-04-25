@@ -67,7 +67,7 @@ $(document).ready(function()
                         <label for="RsvpID">Reservation ID: </label>
                         <input type="number" class="form-control" name="RsvpIDCancel" placeholder="ID" required>
                     </div>
-                    <input type='button' id="CancelBTNCon" class='btn btn-block btn-success' value="Cancel">
+                    <input type='button' id="CancelBTNCon" class='btn btn-block btn-success' value="Cancel Reservation">
                 </div>
             </div>
         </form>
