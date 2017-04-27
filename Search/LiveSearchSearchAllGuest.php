@@ -23,7 +23,7 @@
         {
             if(mysqli_num_rows($result) > 0)
             {
-                echo "<table border = 2><tr>"
+                echo "<table><tr>"
                     ."<th>Guest ID</th>"
                     ."<th>Name</th>"
                     ."<th>Phone Number</th>"

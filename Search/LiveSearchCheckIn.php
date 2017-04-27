@@ -37,7 +37,7 @@
             if(mysqli_num_rows($result) > 0)
             {
 
-                echo "<table border = 2><tr>"
+                echo "<table class='searchOut'><tr>"
                     ."<th>ReservationID</th>"
                     ."<th>GuestName</th>"
                     ."<th>Room</th>"

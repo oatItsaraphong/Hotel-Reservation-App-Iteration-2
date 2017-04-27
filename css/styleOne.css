@@ -24,6 +24,18 @@ div.newMain:empty {
 	padding-bottom: 0px;
 
 }
+th, td, tr{
+	padding: 5px;
+	text-align: left;
+}
+
+tr:nth-child(odd){
+	background-color: white;
+}
+
+tr:nth-child(even){
+	background-color: #f0f0f0;
+}
 
 div.navMain {
 
