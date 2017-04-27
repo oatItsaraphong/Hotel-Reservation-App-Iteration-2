@@ -28,10 +28,12 @@
 	$User = $_POST['UserName1'];
 	$Name = $_POST['FullName1'];
 
+	require "functionUser.php";
+
 	if(strcmp($Pass1,$Pass2) != 0)
 	{
 		echo "Incorrect Password Input<br>";
-		echo "<a href='HW3.php' align='right' type='button' class='btn btn-block btn-warning'>Back to Login</a>";
+		BackToMainBTN();
 		exit();
 	}
 	//$link = $_SESSION['Link'];
@@ -86,7 +88,9 @@
 		echo "Missing arguemnt";
 	}
 
-	echo "<a href='HW3.php' align='right' type='button' class='btn btn-block btn-warning'>Back to Login</a><br>";
+	BackToMainBTN();
+
+	mysqli_close($link);
 ?>
 	</div>
 	<script src="jscode/page.js" type="text/javascript"></script>

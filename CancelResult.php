@@ -51,7 +51,7 @@
 		echo "<h2>Error</h2><br>";
 	}
 
-
+	mysqli_close($link);
 ?>
 	</div>
 

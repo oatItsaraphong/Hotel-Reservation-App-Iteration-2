@@ -33,7 +33,7 @@
     if($link == 0)
     {
         echo "Wrong UserName";
-        echo "<a href='index.php' type='button' class='btn-block btn btn-warning'>Back to Login</a>";
+        BackToMainBTN();
         exit();
 
     }
@@ -101,7 +101,8 @@
     else{
         echo "<h3>No Check Out Today</h3><br>";
     }
-
+    BackToMainBTN();
+    mysqli_close($link);
 ?>
 </div>
     <script src="code/sample.js" type="text/javascript"></script>

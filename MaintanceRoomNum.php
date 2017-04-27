@@ -37,7 +37,7 @@ session_start();
 	if($link == 0)
 	{
 		echo "Wrong UserName";
-		echo "<a href='index.php' type='button' class='btn-block btn btn-warning'>Back to Login</a>";
+		BackToMainBTN();
 		exit();
 
 	}
@@ -86,7 +86,8 @@ session_start();
         	echo "<h3>No Maintance</h3><br>";
         }
 	}
-
+	BackToMainBTN();
+	mysqli_close($link);
 	?>
 	</div>
 </div>

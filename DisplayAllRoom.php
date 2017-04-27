@@ -58,6 +58,8 @@ session_start();
             }
 	}
 
+	mysqli_close($link);
+
 	?>
 	</div>
 

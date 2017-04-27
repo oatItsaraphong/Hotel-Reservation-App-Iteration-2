@@ -168,7 +168,7 @@
     }// end else
         echo "<br>";
         BackToMainBTN();
-
+        mysqli_close($link);
     ?>
 </div>
     <script src="code/sample.js" type="text/javascript"></script>

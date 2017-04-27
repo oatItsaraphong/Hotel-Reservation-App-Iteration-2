@@ -61,7 +61,7 @@
 <?php
     if($test == 0){
         echo "<h2>Unable to access the data</h2>";
-
+        mysqli_close($link);
         BackToMainBTN();
         exit();
     }
@@ -217,6 +217,7 @@
     }// end else
         echo "<br>";
         BackToMainBTN(); 
+        mysqli_close($link);
     ?>
 </div>
     <script src="code/sample.js" type="text/javascript"></script>

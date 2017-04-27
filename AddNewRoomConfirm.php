@@ -42,6 +42,7 @@
     {
         echo "Wrong UserName";
         echo "<a href='index.php' type='button' class='btn-block btn btn-warning'>Back to Login</a>";
+        mysqli_close($link);
         exit();
 
     }
@@ -95,7 +96,7 @@
         echo "<br>";
         BackToMainBTN(); 
     }
-    
+    mysqli_close($link);
 ?>
 <script src="code/sample.js" type="text/javascript"></script>
 </div>

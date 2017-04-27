@@ -1,0 +1,39 @@
+body.back {
+	background-image: url("../images/hotel1.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: top-center;
+}
+
+img.logo{
+	width: 100%;
+	border-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+div.newMain {
+	background-color: rgba(255,255,255,0.8);
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+div.newMain:empty {
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+
+}
+
+div.navMain {
+
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 10px;
+}
+
+div.padNew {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 20px;
+}

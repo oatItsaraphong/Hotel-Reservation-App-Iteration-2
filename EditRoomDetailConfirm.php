@@ -89,13 +89,15 @@
         BackToMainBTN(); 
 
 
+
     }
     else{
         echo "Fail To update";
         echo "<br>";
         BackToMainBTN(); 
     }
-    
+
+    mysqli_close($link);
 ?>
 <script src="code/sample.js" type="text/javascript"></script>
 </div>

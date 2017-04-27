@@ -65,7 +65,7 @@
                                 }
                             }
                     }
-
+                    mysqli_close($link);
 
                        // BackToMainBTN();
                 ?>

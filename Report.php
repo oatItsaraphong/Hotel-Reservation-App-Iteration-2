@@ -20,11 +20,12 @@
 	//echo "Enter Update";
 	//update the database
 	require "configHotel.php";
+	require "functionUser.php";
 	$link = LoginDB($_SESSION['User'],$_SESSION['Pass']);
 	if($link == 0)
 	{
 		echo "Wrong UserName";
-		echo "<a href='index.php' type='button' class='btn-block btn btn-warning'>Back to Login</a>";
+		BackToMainBTN(); 
 		exit();
 
 	}
@@ -88,6 +89,8 @@
 	{
 		echo "Query to update is wrong";
 	}
+	BackToMainBTN(); 
+	mysqli_close($link);
 ?>
 
 	<div id= 'CheckingInGuest'>

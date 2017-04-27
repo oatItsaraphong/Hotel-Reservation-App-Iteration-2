@@ -128,6 +128,7 @@
 	}//end check empty argument
 
 	BackToMainBTN();
+	mysqli_close($link);
 ?>
 	</div>
 	<script src="jscode/page.js" type="text/javascript"></script>

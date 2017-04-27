@@ -26,16 +26,17 @@ session_start();
 
 	header('Content-Type: text/html; charset=utf8');
 	require "configHotel.php";
+	require "functionUse.php";
 	$link = LoginDB($User,$Pass);
 	if($link == 0)
 	{
 		echo "Wrong UserName";
-		echo "<a href='index.php' type='button' class='btn-block btn btn-warning'>Back to Login</a>";
+		BackToMainBTN();
 		exit();
 
 	}
 
-	require "functionUse.php";
+	
 	mysqli_set_charset($link,"utf8");
 
 	$_SESSION["User"] = $User;
@@ -79,6 +80,8 @@ session_start();
 			else{
 				echo "<p>New</p>";
 			}
+
+			mysqli_close($link);
 		?>
 
 

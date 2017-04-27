@@ -32,12 +32,13 @@
 <div class="col-md-4 col-sm-0 col-lg-5">
 <div>
 <?php
-    
+    require "configHotel.php";
     $userToPutUser = $_SESSION['UserRe'];
     $userToPutName = $_SESSION['NameRe'];
     $userToPutPass1 = $_SESSION['Pass1Re'];
     if($_SESSION['Pass1Re'] != $_SESSION['Pass2Re']){
         echo "Invalid Password Input";
+        BackToMainBTN();
         exit();
     }
 
@@ -46,7 +47,7 @@
 
     //echo $userToPutName;
     //echo $userToPutPass1;
-    require "configHotel.php";
+    
     //$link = LoginDB($User,$Pass);
     $link = LoginDB($_SESSION['User'],$_SESSION['Pass']);
     if($link == 0)
@@ -95,7 +96,8 @@
     else{
         echo "Fail get";
     }
-    
+    BackToMainBTN();
+    mysqli_close($link);
 ?>
 </div>
 </div>

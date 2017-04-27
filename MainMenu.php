@@ -15,9 +15,12 @@ session_start();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
+
+
 </head>
 
-<body>
+<body class="back">
 	<div>
 	<?php
 
@@ -74,8 +77,9 @@ session_start();
 	?>
 	</div>
 
-	<div class="col-sm-4 col-md-3 col-lg-3 MainNAV black">
+	<div class="navMain col-sm-4 col-md-3 col-lg-3 MainNAV black">
 
+	<img src="images/logo.jpg" class="logo">
 	<?php
 		//for everyone except maintenance
 		if(($per == 1) Or ($per == 2) Or ($per ==4))
@@ -129,6 +133,8 @@ session_start();
 			}
 	
 
+			mysqli_close($link);
+		
 		?>
 		<br>
 		<a href="Login.php" type="button" id="LogoutBTN" class="btn-block btn btn-danger">Log Out</a>
@@ -136,7 +142,7 @@ session_start();
 
 
 
-	<div class="MainBODY col-sm-6 col-md-8 col-lg-9 " id="MainBODY"></div>
+	<div class="newMain MainBODY col-sm-6 col-md-8 col-lg-9 " id="MainBODY"></div>
 	 <script src="code/sample.js" type="text/javascript"></script>
 </body>
 </html>

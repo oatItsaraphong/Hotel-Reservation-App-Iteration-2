@@ -95,7 +95,7 @@
 
 		//search with name
 		echo "<div id= 'CheckingInGuest'>";
-		echo "<strong>Roome Free</strong><br><br>";
+		echo "<strong>Room Free</strong><br><br>";
 
 		echo "There are <b>". $test."</b> rooms free <br><br>";
 
@@ -121,7 +121,7 @@
 			echo "<option value=".$row[RoomIDNum].">"
 				.$row[RoomIDNum]." - "
 				.$row[NumberOfBed]. " Bed - "
-				.$row[BedType]. " View - "
+				.$row[BedType]. "  -   "
 				.$row[LocationType];
 
 			echo "</opiton>";
