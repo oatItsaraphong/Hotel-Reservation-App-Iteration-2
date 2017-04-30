@@ -89,7 +89,6 @@
 	}
 
 	BackToMainBTN();
-
 	mysqli_close($link);
 ?>
 	</div>

@@ -21,7 +21,7 @@ session_start();
 </head>
 
 <body class="back">
-	<div>
+	
 	<?php
 
 	$User = 0;
@@ -57,10 +57,14 @@ session_start();
 	require "configHotel.php";
 	$link = LoginDB($User,$Pass);
 	if($link == 0)
-	{
-		echo "Wrong UserName";
-		echo "<a href='index.php' type='button' class='btn-block btn btn-warning'>Back to Login</a>";
+	{	
+		echo "<div class='newMain2'>";
+		//echo "<div class ='col-lg-12'>";
+		echo "<h3>Wrong UserName</h3>";
+		echo "<a href='Login.php' type='button' class='btn-block btn btn-danger'>Back to Login</a>";
+		echo "</div>";
 		exit();
+		
 
 	}
 
@@ -75,7 +79,7 @@ session_start();
 
 	$per = CheckPermission($_SESSION['User'],$_SESSION['Pass'],$link);
 	?>
-	</div>
+	
 
 	<div class="navMain col-sm-4 col-md-3 col-lg-3 MainNAV black">
 
@@ -141,7 +145,7 @@ session_start();
 	</div>
 
 
-
+	
 	<div class="newMain MainBODY col-sm-6 col-md-8 col-lg-9 " id="MainBODY"></div>
 	 <script src="code/sample.js" type="text/javascript"></script>
 </body>

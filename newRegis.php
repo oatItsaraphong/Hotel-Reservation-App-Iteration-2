@@ -72,7 +72,8 @@
         $row = mysqli_fetch_assoc($result);
         //echo "TTE: ". $row['EmployeeID']."<br>";
         $newID = $row[EmployeeID] + 1;
-        echo "<br>New Employee ID: ".$newID;
+        echo "<br><h3>New Employee ID: ".$newID;
+        echo "</h3>";
 
         $toAdd = "INSERT INTO EmployeeTable (EmployeeID, UserName, EmployeeName, EntryDate, Password, Permission) VALUES (".$newID.", '".$userToPutUser."', '".$userToPutName."', NULL, '".$userToPutPass1."', 1)";
 
@@ -81,10 +82,10 @@
         $AddedTo = mysqli_query($link, $toAdd);
         if($AddedTo != false)
         {
-            echo "<br>";
+            echo "<h4><br>";
             echo "User have been Added<br>";
             echo "UserName: ". $userToPutUser. "<br>";
-            echo "Access Level: Basic";
+            echo "Access Level: Basic</h4>";
             
         }
         else
@@ -96,7 +97,7 @@
     else{
         echo "Fail get";
     }
-    BackToMainBTN();
+    
     mysqli_close($link);
 ?>
 </div>

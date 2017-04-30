@@ -14,11 +14,13 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
+
 
 </head>
 
-<body>
-    <div id="wrapper">
+<body class='back'>
+    <div class='back2' id="wrapper">
 	<h2> Payment Info Check Out </h2>
         <br>
 
@@ -87,7 +89,7 @@
 			AND ReservationID = '$_POST[CheckOutID]'
 			AND GuestIDNum  = ReservedForGuest 
 			AND ReservedRoom = RoomIDNum ";
-
+		//echo $sql;
 		
 		$result = mysqli_query($link, $sql);
 		
@@ -98,6 +100,8 @@
 			if($test == 0)
 			{
 				echo "No Result";
+				echo "<br>";
+				echo "<br>";
 				BackToMainBTN();
 				exit();
 			}
@@ -105,6 +109,8 @@
 			{
 				echo "<br>";
 				echo "Please Use the ID to search for this reservation";
+				echo "<br>";
+				echo "<br>";
 				BackToMainBTN();
 				exit();
 				//echo $test;
@@ -115,9 +121,9 @@
 
 	
 				//display all information
-				echo "<table>";
+				echo "<table class='cent'>";
 				echo "<div id='Testing'>";
-				echo "<strong>Guest Resevation Info</strong>";
+				echo "<strong><h3>Guest Resevation Info</h3></strong>";
 				echo "<form action='CheckOutConfirm.php' method='post'>";
 				
 				echo "<tr><td>Reservation ID</td>"
@@ -243,7 +249,7 @@
                         . "<td>"."<input type='number' id='PayValue' name='PayValue' value =".$row[PaidAmount].">"."</td>"
                         ."<td></td>"
                         ."</tr>";
-				echo "<td><input class='btn btn-block btn-danger' type='Submit' value='Confirm Check Out '></td>"
+				echo "<td colspan='2'><input class='btn btn-block btn-danger' type='Submit' value='Confirm Check Out '></td>"
                                         ."</tr>";
 
 

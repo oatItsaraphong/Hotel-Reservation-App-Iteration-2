@@ -66,7 +66,8 @@
         } 
         else
         {
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($Rlink);
+            echo "Require more information";
+            //echo "ERROR: Could not able to execute $sql. " . mysqli_error($Rlink);
         }
     }
 

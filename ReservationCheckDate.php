@@ -63,7 +63,7 @@ $(document).ready(function()
         <h2>Make Reservation</h2>
         <br>
         <form action="RoomReservation.php" method="post">
-            <div class='panel panel-success'>
+            <div class='panel panel-primary'>
                 <div class='panel-heading'> Check Date </div>
                 <div class='panel-body'>
                     <div class="form-group">

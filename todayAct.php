@@ -15,10 +15,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
+
 
 </head>
 
 <body>
+
+<div class="midOne">
 
 <div class='page-header'><h1>Today Activity</h1></div>
 
@@ -47,8 +51,9 @@
     $date = $Today[year] +"-" + $Today[mon] + "-" + $Today[mday];
     $MoIn = date('Y-m-d', strtotime($date));
 
-    echo "<h2> Today is: ";
+    echo "<h2> Date: ";
     echo date('m-d-Y', strtotime($date));
+    echo "</h2>";
 
 
     //Check In Section
@@ -74,6 +79,7 @@
     }
     else{
         echo "<h3>No Check In Today</h3><br>";
+        echo " ----- ";
     }
 
     //-------------------------------------------------------------------------
@@ -101,9 +107,10 @@
     else{
         echo "<h3>No Check Out Today</h3><br>";
     }
-    BackToMainBTN();
+    //BackToMainBTN();
     mysqli_close($link);
 ?>
+</div>
 </div>
     <script src="code/sample.js" type="text/javascript"></script>
 </body>

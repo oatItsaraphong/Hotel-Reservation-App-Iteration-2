@@ -15,6 +15,7 @@ session_start();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
 </head>
 
 <body>
@@ -47,7 +48,7 @@ session_start();
 	{
             if(mysqli_num_rows($result) > 0)
             {
-                echo "<h3>All the room</h3><br>";
+                echo "<h2>All the room</h2><br>";
 
                 //echo "<table border=1px>";
                 while($row = mysqli_fetch_array($result))

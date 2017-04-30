@@ -7,18 +7,19 @@
 <title>Make Reservation</title>
 <meta name="Content-Type" content="text/html; charset=utf8"/>
 
-        <link rel="stylesheet" type="text/css" href="theme.css">
+<link rel="stylesheet" type="text/css" href="theme.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
 
 </head>
 
-<body>
-    <div id="wrapper">
+<body class='back'>
+    <div class='back2' id="wrapper">
 
 	<h2> Making Reservation</h2>
-	<br>
+	
 
 <?php
 	require "configHotel.php";
@@ -95,23 +96,23 @@
 
 		//search with name
 		echo "<div id= 'CheckingInGuest'>";
-		echo "<strong>Room Free</strong><br><br>";
+		echo "<strong><h3>Room Free</h3></strong><br>";
 
-		echo "There are <b>". $test."</b> rooms free <br><br>";
+		echo "<h4>There are <b>". $test."</b> rooms free <br><br>";
 
 		echo "<b>From: &nbsp</b>";
 		echo $InDate."<br><br>";
 		echo "<b>To:  &nbsp</b>";
-		echo $OutDate."<br><br>";
+		echo $OutDate."<br><br></h4>";
 
-		echo "<table>";
+		echo "<table class='cent'>";
 		
 		echo "<form action='ExeRoomReservation.php' method='post'>";
 		
 		//Name 
 		echo "<tr><td>";
-		echo "Room Avaliable: </td>" ;
-		echo "<td>";
+		echo "Room Avaliable: </td></tr>" ;
+		echo "<tr><td>";
 		//echo "<input id='GuestName' list='NameList' name='RoomNumAv' required>";
 
 		//can be change to use datalist
@@ -128,8 +129,8 @@
 			
 		}
 		echo "</select>";
-		echo "</td>";
-		echo "<td><button type='submit' class='btn btn-block btn-info'>Choose Room</input></td>";
+		echo "</td></tr>";
+		echo "<tr><td><button type='submit' class='btn btn-block btn-info'>Choose Room</input></td>";
 		echo "</tr>";
 	
 		echo "</form>";

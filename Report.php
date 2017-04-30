@@ -1,26 +1,33 @@
 <?php
 	session_start();
-
 ?>
 <html>
 <head>
 <title>Enter Date for report</title>
 <meta name="Content-Type" content="text/html; charset=utf8"/>
-       <link rel="stylesheet" type="text/css" href="theme.css">
+<link rel="stylesheet" type="text/css" href="theme.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
 </head>
 
-<body>
-    <div id="wrapper">
+<body >
+    <div class='container backFull' id="wrapper">
 
-     	<h2> Check Room</h2>
+     	<h2>Check Room</h2>
 	<br>
 
 <?php
 	//echo "Enter Update";
 	//update the database
 	require "configHotel.php";
-	require "functionUser.php";
+	require "functionUse.php";
 	$link = LoginDB($_SESSION['User'],$_SESSION['Pass']);
 	if($link == 0)
 	{
@@ -30,7 +37,7 @@
 
 	}
 	$allIn ="SELECT * FROM ReservationTable WHERE (Statue = 'Check Out' OR Statue = 'Cancel')";
-	//echo "enter2";
+	//echo $allIn;
 	$result = mysqli_query($link,$allIn);
 	if($result != false)
 	{	
@@ -60,6 +67,7 @@
 						'$row[Statue]', '$row[DiscountPercent]', '$row[PaidAmount]', 
 					        (SELECT EmployeeID FROM EmployeeTable WHERE EmployeeID = '$row[HandlerEmployee]'), 
 					        '$row[ReservedComment]')";
+
 				$deleting="DELETE FROM ReservationTable
 						WHERE ReservationID = '$row[ReservationID]'";
 
@@ -89,49 +97,39 @@
 	{
 		echo "Query to update is wrong";
 	}
-	BackToMainBTN(); 
+
+	//BackToMainBTN(); 
 	mysqli_close($link);
 ?>
 
+
 	<div id= 'CheckingInGuest'>
-	<strong>Enter Date</strong>
+	<strong><h4>Enter Date</h4></strong>
 
 
 		<form action='DateHistory.php' target='_blank' method='post'>
-		<table>
-			<!--<tr>
-				<td>Report by</td>
-				<td><input type='radio' name='CDate' value='HisCheckInDate'>Check In
-				<br><input type='radio' name='CDate' value='HisCheckOutDate'>Check Out</td>		
-				<td></td>
-			</tr>-->
-			<tr>
-				<td>--------</td></tr><tr>
-				<td>Start Date</td>
-				<td><input type='date' name='DateMin' required></td>
-				<td></td>
-			</tr>
 
-			<tr>
-		        <td>End Date</td>
-		        <td><input type='date' name='DateMax' required></td>
-		        <td></td>
-			</tr>
 
-			<tr>
-				<td><input type="submit" value='Report'></td>
-		        <td></td>
-		        <td></td>
-			</tr>
-		</table>
+			<div class="form-group">
+            <label for="DateMin">Start Date:</label>
+            <input type="text" class="form-control" name="DateMin" placeholder="mm/dd/yyyy" required>
+        	</div>
+
+        	<div class="form-group">
+            <label for="DateMax">End Date:</label>
+            <input type="text" class="form-control" name="DateMax" placeholder="mm/dd/yyyy" required>
+        	</div>
+
+        	<div>
+	        	<input type="submit" class='btn-block btn btn-primary' value="Report"></td>
+	        </div>
+
 
 		</form>
 
 	
 	</div>
 	<br>
-
-       <table width=100% height=30 bgcolor="#555555"><tr></tr></table>
 
 </div>
 </body>

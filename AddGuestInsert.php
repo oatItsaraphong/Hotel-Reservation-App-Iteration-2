@@ -6,14 +6,21 @@
 <head>
 <title>Guest Added</title>
 <meta name="Content-Type" content="text/html; charset=utf8"/>
+<link rel="stylesheet" type="text/css" href="theme.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="theme.css">
 
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
 </head>
 
-<body>
+<body class='back'>
 
-    <div id="wrapper">
+    <div class='back2' id="wrapper">
 
     <h2> Guest Added</h2>
     <br>
@@ -63,28 +70,25 @@
                         BackToMainBTN();
                         exit();
                 }
-	
-        		echo "<table border = 2><tr>"
-                        ."<th>Guest ID</th>"
-                        ."<th>Name</th>"
-                        ."<th>Phone Number</th>"
-                        ."<th>Email</th>"
-                        ."<th>Number of visit</th>"
-                        ."<th>Comment</th>"
-                        ."</tr>";
+	           echo "<table class='cent'>";
+               while($row = mysqli_fetch_assoc($result))
+                    {
+                		
+                        echo "<tr>"
+                        ."<td>Guest ID</td>"."<td>".$row["GuestIDNum"]."</td>"
+                        ."</tr><tr>"
+                        ."<td>Name</td>"."<td>".$row["GuestName"]."</td>"
+                        ."</tr><tr>"
+                        ."<td>Phone Number</td>"."<td>".$row["GuestTel"]."</td>"
+                        ."</tr><tr>"
+                        ."<td>Email</td>"."<td>".$row["GuestEmail"]."</td>"
+                        ."</tr><tr>"
+                         ."<td>Number of visit</td>"."<td>".$row["GuestNumberOfVisit"]."</td>"
+                         ."</tr><tr>"
+                        ."<td>Comment</td>"."<td>".$row["GuestComment"]."</td></tr>";
 
-                        while($row = mysqli_fetch_assoc($result))
-                        {
-                                echo "<tr>"
-                                ."<td>".$row["GuestIDNum"]."</td>"
-                                ."<td>".$row["GuestName"]."</td>"
-                                ."<td>".$row["GuestTel"]."</td>"
-                                ."<td>".$row["GuestEmail"]."</td>"
-                                ."<td>".$row["GuestNumberOfVisit"]."</td>"
-                                ."<td>".$row["GuestComment"]."</td>";
-
-                        }
-                        echo "</table>";
+                    }
+            echo "</table>";
         
 	}
 	else
@@ -93,6 +97,7 @@
         BackToMainBTN();
         exit();
 	}
+    echo "<br>";
     BackToMainBTN();
 	mysqli_close($link);
 	?>

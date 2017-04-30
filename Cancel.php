@@ -60,14 +60,14 @@ $(document).ready(function()
         <h2> Canceling</h2>
         <br>
         <form id="CancelForm" method="post">
-            <div class='panel panel-success'>
+            <div class='panel panel-danger'>
                 <div class='panel-heading'> Cancel Reservation </div>
                 <div class='panel-body'>
                     <div class="form-group">
                         <label for="RsvpID">Reservation ID: </label>
                         <input type="number" class="form-control" name="RsvpIDCancel" placeholder="ID" required>
                     </div>
-                    <input type='button' id="CancelBTNCon" class='btn btn-block btn-success' value="Cancel Reservation">
+                    <input type='button' id="CancelBTNCon" class='btn btn-block btn-danger' value="Cancel Reservation">
                 </div>
             </div>
         </form>

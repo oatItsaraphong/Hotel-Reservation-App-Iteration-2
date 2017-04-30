@@ -25,8 +25,8 @@ function LoginDB ($inUser, $inPass){
 	$permit = ExamPassword($inUser, $inPass, $link);
 	if($permit == 0)
 	{
-		echo "Wrong password";
-		echo "<br>";
+		//echo "Wrong password";
+		//echo "<br>";
 		return 0;
 	}
 
@@ -47,7 +47,7 @@ function ExamPassword($inUser, $inPass, $inLink){
 
 	if($result == false)
 	{
-		echo "fail";
+		//echo "fail";
 		return 0;
 	}
 	else
@@ -58,7 +58,7 @@ function ExamPassword($inUser, $inPass, $inLink){
 		$test = mysqli_num_rows($result);
 		if($test == 0)
 		{
-			echo "Unknow account";
+			//echo "Unknow account";
 			return 0;
 		}
 	}

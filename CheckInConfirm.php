@@ -11,9 +11,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
+
 </head>
-<body>
-<div>
+<body class='back'>
+<div class='back2'>
 
 <?php
 
@@ -75,9 +78,9 @@
 					$row = mysqli_fetch_assoc($result);
 					
 					//display all information
-					echo "<table>";
+					echo "<table class='cent'>";
 					echo "<div id='Testing'>";
-					echo "<strong>Reserved Info</strong>";
+					echo "<strong><h3>Reserved Info</h3></strong>";
 					echo "<form>";
 					
 					echo "<tr><td>Reservation ID</td>"
@@ -127,6 +130,7 @@
 	
 	}//end check empty argument
 
+	echo '<br>';
 	BackToMainBTN();
 	mysqli_close($link);
 ?>

@@ -15,20 +15,22 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
 
 
 </head>
 
-<body>
+<body class='back'>
+<div class='container back2'>
 <div class='page-header'><h1>Add Room </h1></div>
 
-<div class="col-md-4 col-sm-0 col-lg-5">
+<div class="col-lg-12">
 <div>
 <?php
     
-    echo "Add room: ";
-    echo $_SESSION['AddRoomNum1'];
-    echo "<br><br>";
+    echo "<h3>Add room: ";
+    echo $_POST['AddRoomNum1'];
+    echo "</h3><br><br>";
 
     $User = $_SESSION['User'];
     $Pass = $_SESSION['Pass'];
@@ -41,7 +43,7 @@
     if($link == 0)
     {
         echo "Wrong UserName";
-        echo "<a href='index.php' type='button' class='btn-block btn btn-warning'>Back to Login</a>";
+        BackToMainBTN();
         mysqli_close($link);
         exit();
 
@@ -83,6 +85,7 @@
     //echo $upQuery;
     $result = mysqli_query($link,$addQuery);
     //echo $result;
+    echo "<h3>";
     if($result != false)
     {   
         echo "Update Successful<br>";
@@ -96,9 +99,11 @@
         echo "<br>";
         BackToMainBTN(); 
     }
+    echo "</h3>";
     mysqli_close($link);
 ?>
 <script src="code/sample.js" type="text/javascript"></script>
+</div>
 </div>
 </div>
 </body>

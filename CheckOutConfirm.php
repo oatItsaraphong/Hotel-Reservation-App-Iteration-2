@@ -11,11 +11,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
+
+
 </head>
 
-<body>
+<body class='back'>
 
-    <div id="wrapper">
+    <div class='back2' id="wrapper">
 	<h2> Confirmation Page with Payment At Check Out</h2>
 	<br>
     <?php
@@ -50,7 +53,7 @@
 	//calculate the price for the night
 	$NumDayPay =  _Cal_Day($temp["CheckInDate"], $temp["CheckOutDate"]);
 	$PriceCom = (($NumDayPay * $temp[RoomPrice]) + $temp[DiscountPercent]);
-	echo $_POST[PayValue];
+	//echo $_POST[PayValue];
 
 
 	if(($PriceCom <= $_POST[PayValue])&&($_POST[PaymentMethod] != NULL) )
@@ -112,9 +115,9 @@
 					$row = mysqli_fetch_assoc($result);
 		
 					//display all information
-					echo "<table>";
+					echo "<table class='cent'>";
 					echo "<div id='Testing'>";
-					echo "<strong>Guest Resevation Info</strong>";
+					echo "<strong><h3>Guest Resevation Info</h3></strong>";
 					echo "<form  method='post'>";
 					
 					echo "<tr><td>Reservation ID</td>"
@@ -246,6 +249,7 @@
 
 	//session_destroy();
     mysqli_close($link);
+    echo "<br>";
     BackToMainBTN();
 
     ?>

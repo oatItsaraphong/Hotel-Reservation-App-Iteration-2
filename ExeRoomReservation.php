@@ -10,11 +10,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
 
 </head>
 
-<body>
-     <div id="wrapper"> 
+<body class='back'>
+     <div class='back2' id="wrapper"> 
 
 	<h2> Confirmation Reservation</h2>
 	<br>
@@ -44,7 +45,7 @@
 	$User = $_SESSION['User'];
 	$Add = $_SESSION['Additional'];
 
-	echo $ID;
+	//echo $ID;
 
 	$MoIn = date('Y-m-d', strtotime($_SESSION['DateIn']));
 	$MoOut = date('Y-m-d', strtotime($_SESSION['DateOut']));
@@ -78,7 +79,7 @@
 
 		}
 
-		echo "Enter insert";
+		//echo "Enter insert";
 		/*
 		$change = "INSERT INTO `ReservationTable` (`ReservationID`, `CheckInDate`, `CheckOutDate`, `ReservedRoom`, `ReservedForGuest`, `NumberOfGuest`, `ReseredFrom`, `PaymentMethod`, `Statue`, `PaidAmount`, `DiscountPercent`, `HandlerEmployee`, `ReservedComment`) VALUES (NULL, '$MoIn', '$MoOut', '201', '$ID', '$NumCus', '$FromInfo', 'None', 'Reserved', '0', '0', '1122', '$Add')";
 		*/
@@ -145,9 +146,9 @@
 
 	
 				//display all information
-				echo "<table>";
+				echo "<table class='cent'>";
 				echo "<div id='Testing'>";
-				echo "<strong>Reserved Info</strong>";
+				echo "<strong><h3>Reserved Info</h3></strong>";
 				echo "<form>";
 				
 				echo "<tr><td>Reservation ID</td>"
@@ -233,8 +234,8 @@
                                         ."<td> </td>"
                                         ."</tr>";
 				$ActualPrice = (($NumDay * $row[RoomPrice])* ( 100 - $row[DiscountPercent]) ) /100;
-				echo "<tr><td>Total Price</td>"
-                                        . "<td><u>".$ActualPrice."</u></td>"
+				echo "<tr><td><strong>Total Price</strong></td>"
+                                        . "<td><b><u>".$ActualPrice."</u></b></td>"
                                         ."<td> </td>"
                                         ."</tr>";
 /*
@@ -276,6 +277,7 @@
 		}
 	
         mysqli_close($link);
+        echo '<br>';
         BackToMainBTN();
         ?>        
 	

@@ -15,9 +15,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
+
 </head>
 
-<body>
+<body class='back'>
+<div class="container back2">
 <?php
     $User = $_SESSION['User'];
     $Pass = $_SESSION['Pass'];
@@ -54,7 +58,7 @@
 
 
 <div class='page-header'><h2>Room number <?php echo $_SESSION['RoomToEdit']; ?></h2></div>
-<div class="col-md-4 col-sm-0 col-lg-6">
+<div class="col-lg-12">
 <div>
 
 
@@ -109,25 +113,25 @@
             ?> required>
         </div>
 
-        <div class="form-group container">
+        <div class="form-group">
             <div class='row'>
             <div class='col'>
             <label for="rStatusE">Status: </label></div></div>
 
             <div class='row'>
-                <div class='col-lg-2'>
+                <div class='col-lg-4'>
                     <input type='radio' name='rStatusE' value='Good' checked="true"> Available
                 </div>
-                <div class='col-lg-2'>
+                <div class='col-lg-4'>
                     <input type='radio' name='rStatusE' value='Fix'> Need maintanance   
                 </div>
-                <div class='col-lg-2'>
+                <div class='col-lg-4'>
                     <input type='radio' name='rStatusE' value='Inactive'> Inactive   
                 </div>
             </div>
         </div>
 
-        <div class="form-group container">
+        <div class="form-group">
             <div class='row'>
             <div class='col'>
             <label for="Bal">Balcony: </label></div></div>
@@ -137,10 +141,10 @@
                 {
             ?>
             <div class='row'>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='BalVal' value='1' checked="true"> Have
                 </div>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='BalVal' value='0'> Have Not
                 </div>
             </div>
@@ -151,10 +155,10 @@
                 {
             ?>
             <div class='row'>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='BalVal' value='1' > Have
                 </div>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='BalVal' value='0' checked="true"> Have Not
                 </div>
             </div>
@@ -163,7 +167,7 @@
             ?>
         </div> 
 
-        <div class="form-group container">
+        <div class="form-group">
             <div class='row'>
             <div class='col'>
             <label for="Bal">Kitchen: </label></div></div>
@@ -174,10 +178,10 @@
                 {
             ?>
             <div class='row'>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='KitVal' value='1' checked="true"> Have
                 </div>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='KitVal' value='0'> Have Not
                 </div>
             </div>
@@ -188,10 +192,10 @@
                 {
             ?>
             <div class='row'>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='KitVal' value='1' > Have
                 </div>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='KitVal' value='0' checked="true"> Have Not
                 </div>
             </div>
@@ -221,5 +225,6 @@
     ?>
 </div>
     <script src="code/sample.js" type="text/javascript"></script>
+</div>
 </body>
 </html>

@@ -15,9 +15,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
+
 </head>
 
-<body>
+<body class='back'>
+<div class='container back2'>
 <?php
     $User = $_SESSION['User'];
     $Pass = $_SESSION['Pass'];
@@ -55,7 +59,7 @@
 
 
 <div class='page-header'><h2>Room number <?php echo $_SESSION['RoomToEdit']; ?></h2></div>
-<div class="col-md-4 col-sm-0 col-lg-6">
+<div class="col-lg-12">
 <div>
 
 
@@ -139,16 +143,16 @@
 
         <!---->
 
-        <div class="form-group container">
+        <div class="form-group">
             <div class='row'>
             <div class='col'>
             <label for="Bal">Balcony: </label></div></div>
 
             <div class='row'>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='ActVal' value='1' checked="true"> Under Maintencance
                 </div>
-                <div class='col-lg-3'>
+                <div class='col-lg-6'>
                     <input type='radio' name='ActVal' value='0'> Room is Available 
                 </div>
             </div>
@@ -172,5 +176,6 @@
     ?>
 </div>
     <script src="code/sample.js" type="text/javascript"></script>
+    </div>
 </body>
 </html>

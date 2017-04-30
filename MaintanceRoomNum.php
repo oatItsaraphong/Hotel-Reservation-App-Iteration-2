@@ -86,7 +86,7 @@ session_start();
         	echo "<h3>No Maintance</h3><br>";
         }
 	}
-	BackToMainBTN();
+
 	mysqli_close($link);
 	?>
 	</div>

@@ -73,6 +73,7 @@
     //echo $topID;
     $result = mysqli_query($link,$upQuery);
     //echo $result;
+    echo "<h3>";
     if($result != false)
     {   
         echo "Update Successful<br>";
@@ -92,7 +93,8 @@
     else{
         echo "Fail To update";
     }
-    BackToMainBTN();
+    echo "</h3>";
+    
     mysqli_close($link);
 ?>
 <script src="code/sample.js" type="text/javascript"></script>

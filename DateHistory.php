@@ -5,16 +5,26 @@
 <html>
 <head>
 <title>All infor</title>
+
 <meta name="Content-Type" content="text/html; charset=utf8"/>
-       <link rel="stylesheet" type="text/css" href="theme.css">
+<link rel="stylesheet" type="text/css" href="theme.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
+
+
 </head>
 
 <body>
     <div id="wrapper">
         <table width=100% height=30 bgcolor="#555555"><tr></tr></table>
         <form>
-        <input class="buttonMain" type="button" onClick="window.location.href='index.html'"
-                value="Main"/>
         </form>
         <h2> Reservation Record History</h2>
         <br>
@@ -90,12 +100,12 @@
 				{
 					echo "No Reservation";
 				}
-				echo "There are ".$test." records for <b>".$MethodP. "</b> catagory";
-				echo "<table >";
+				echo "<h4>There are ".$test." records for <b>".$MethodP. "</b> catagory</h4>";
+				echo "<table>";
 				_Title_for_History();
 				$totalCash = _Fill_History_Table_with_Total($result);
-				echo "</table>";
-				echo "The total payment for <b>".$MethodP."</b> is <b>".$totalCash."</b>" ;
+				echo "</table><br>";
+				echo "<h4>The total payment for <b>".$MethodP."</b> is <b>".$totalCash."</b></h4" ;
 			}
 			else
 			{
@@ -103,13 +113,15 @@
 			}	
 		}//end function
 
+		echo "<div class='title'><h3><b>Cash</b></h3>" ;
 		DisplaySQL($COCashQ,"Cash");
-		echo "<br><br><br>";
+		echo "</div><br><br><br>";
+		echo "<div class='title2'><h3><b>Credit Card</b></h3>" ;
 		DisplaySQL($COCreditQ,"Credit Card");
-		echo "<br><br><br>";
-		echo "<h4>Cancel Records------------------------</h4>" ;
+		echo "</div><br><br><br>";
+		echo "<div class='title3'><h3><b>Cancel Records</b></h3>" ;
 		DisplaySQL($CancelQ, "None");
-
+		echo "</div>";
 	}
 	else
 	{
@@ -117,7 +129,7 @@
 	}
 	mysqli_close($link);
 	?>
-       <table width=100% height=30 bgcolor="#555555"><tr></tr></table>
+     <table width=100% height=30 bgcolor="#555555"><tr></tr></table>
 
 </div>
 </body>

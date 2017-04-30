@@ -15,17 +15,18 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
 
 </head>
 
-<body>
+<body class='back'>
+<div class='container back2'>
 <div class='page-header'><h1>Change room availability</h1></div>
 
-<div class="col-md-4 col-sm-0 col-lg-5">
+<div class="col-md-6 col-lg-12">
 <div>
 <?php
-    
+    echo "<h4>";
     echo "Update Maintenance Detail for Room: ";
     echo $_POST['RoomP2'];
     //echo $_POST['MainIDP2'];
@@ -37,12 +38,13 @@
     //echo $userToPutName;
     //echo $userToPutPass1;
     require "configHotel.php";
+  
     //$link = LoginDB($User,$Pass);
     $link = LoginDB($_SESSION['User'],$_SESSION['Pass']);
     if($link == 0)
     {
         echo "Wrong UserName";
-        echo "<a href='index.php' type='button' class='btn-block btn btn-warning'>Back to Login</a>";
+        BackToMainBTN();
         exit();
 
     }
@@ -80,11 +82,12 @@
         echo "<br>";
         BackToMainBTN(); 
     }
-    
+    echo "</h4>";
     mysqli_close($link);
     
 ?>
 <script src="code/sample.js" type="text/javascript"></script>
+</div>
 </div>
 </div>
 </body>
