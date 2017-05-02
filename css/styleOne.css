@@ -60,6 +60,8 @@ div.newMain {
 	padding-left: 10px;
 	padding-bottom: 10px;
 
+	background-attachment: fixed;
+
 	margin: auto;
 }
 
@@ -127,3 +129,37 @@ div.padNew {
 	padding-left: 10px;
 	padding-bottom: 20px;
 }
+
+
+.btn-primary{
+	color: #765800;
+	border-color: #dcd16c;
+	background-color: #dcd16c;
+	
+}
+
+.btn-primary:active:focus{
+	color: #dcd16c;
+	border-color: #dcd16c;
+	background-color: #765800;	
+}
+
+.btn-primary:hover, .open>.dropdown-toggle.btn-primary, .btn-primary:focus{
+	color: #dcd16c;
+	border-color: #dcd16c;
+	background-color: #765800;
+}
+
+.btn-primary:active{
+	color: #765800;
+	border-color: #765800;
+	background-color: #dcd16c;	
+}
+.btn-primary.active{
+	color: #765800;
+	border-color: #765800;
+	background-color: #dcd16c;	
+}
+
+
+

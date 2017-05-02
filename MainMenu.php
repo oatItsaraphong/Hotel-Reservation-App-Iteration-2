@@ -18,6 +18,7 @@ session_start();
 <link rel="stylesheet" type="text/css" href="css/styleOne.css">
 
 
+
 </head>
 
 <body class="back">
@@ -89,17 +90,21 @@ session_start();
 		if(($per == 1) Or ($per == 2) Or ($per ==4))
 		{
 	?>
-		<button type="button" id="TodayActivityBTN" class="btn-block btn btn-info">Today's Activity</button>
+		<button type="button" id="TodayActivityBTN" class="btn-block btn btn-primary">Today's Activities</button>
 		<br>
-		
-		<button type="button" id="ReservationBTN" class="btn-block btn btn-primary">Reservation</button>
-		<button type="button" id="CheckInBTN" class="btn-block btn btn-success">Check In</button>
-		<button type="button" id="CheckOutBTN" class="btn-block btn btn-danger">Check Out</button>
+
+		<button type="button" id="AddGuestBTN" class="btn-block fit btn btn-primary">Add Guest</button>
+		<button type="button" id="SearchAllGuestBTN" class="btn-block btn btn-primary">Search All Guests</button>
+		<button type="button" id="SearchAllRoomBTN" class="btn-block btn btn-primary">Search All Rooms</button>
 
 		<br>
-		<button type="button" id="AddGuestBTN" class="btn-block fit btn btn-primary">Add Guest</button>
-		<button type="button" id="SearchAllGuestBTN" class="btn-block btn btn-info">SearchAllGuest</button>
-		<button type="button" id="SearchAllRoomBTN" class="btn-block btn btn-info">Search All Room</button>
+		<button type="button" id="ReservationBTN" class="btn-block btn btn-primary">Create Reservation</button>
+		<button type="button" id="CheckInBTN" class="btn-block btn btn-primary">Check In</button>
+		<button type="button" id="CheckOutBTN" class="btn-block btn btn-primary">Check Out</button>
+
+		
+		
+		
 
 
 		<?php
@@ -109,14 +114,15 @@ session_start();
 		//for Manager Only
 		if(($per == 2) Or ($per ==4))
 			{
-				echo "<br><br>";
-				echo "<br><button type='button' id='CancelBTN' class='btn-block btn btn-danger'>Cancel Reservation</button>";
+				echo "<button type='button' id='CancelBTN' class='btn-block btn btn-primary'>Cancel Reservation</button>";
+				echo "<br>";
 
-				echo "<button type='button' id='ReportBTN' class='btn-block btn btn-primary'>Report By Date</button>";
+				echo "<button type='button' id='ReportBTN' class='btn-block btn btn-primary'>View History</button>";
 
 				echo "<button type='button' id='RegisBTN' class='btn-block btn btn-primary'>Register New Employee</button>";
 
-				echo "<button type='button' id='PermissionBTN' class='btn-block btn btn-primary'>Manage Employee Permission Level</button>";
+				echo "<button type='button' id='PermissionBTN' class='btn-block btn btn-primary'>Manage Employee Permissions</button>";
+				echo "<br>";
 
 				echo "<button type='button' id='addRoomMainBTN' class='btn-block btn btn-primary'>Add New Room</button>";
 			}

@@ -50,7 +50,7 @@ $(document).ready(function()
 
 <body>
     <div id="wrapper">
-        <h2>Search For Guest Name</h2>
+        <h2>Guest Look-up</h2>
         <div class="search-box">
         <input type="text" autocomplete="off" placeholder="Search Guest's Name..." />
         <p>--------------------------------------------</p>

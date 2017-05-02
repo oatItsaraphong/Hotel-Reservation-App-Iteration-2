@@ -45,7 +45,7 @@ function RoomChange($room){
 
         echo "<div class='col-lg-2'>";
         echo "<input value=".$room[RoomIDNum]." name='roomNumStatus' hidden></input>";
-        echo "<input type='submit' class='btn btn-block btn-Danger pull-right' value='Change Status'></input>";
+        echo "<input type='submit' class='btn btn-block btn-Danger pull-right' value='Change Room's Status'></input>";
         echo "</div>";
 
     echo "</form>";
@@ -144,7 +144,7 @@ function PrintRoom($Item, $Permission){
         //echo "Price: ".$Item[RoomIDNum];
         echo "<form action='EditRoomDetail.php' class='formRoomEdit' method='post'>";
         echo "<input value=".$Item[RoomIDNum]." name='RoomToEdit' hidden></input>";
-        echo "<input type='submit' class='RoomEditBTN btn btn-Danger pull-right' value='Edit Room Info'>";
+        echo "<input type='submit' class='RoomEditBTN btn btn-Danger pull-right' value='Edit Room Detail'>";
 
         echo "</form>";
 
@@ -190,7 +190,7 @@ function PrintRoomMain($Item, $permission){
     {
         echo "<form action='MainForm.php' method='post'>";
         echo "<input value=".$Item[MainID]." name='MainDetailID' hidden></input>";
-        echo "<input type='submit' class='btn btn-block btn-Danger pull-right' value='Edit Detail'>";
+        echo "<input type='submit' class='btn btn-block btn-Danger pull-right' value='Edit Maintenance Details'>";
         echo "</form>";
     }
 

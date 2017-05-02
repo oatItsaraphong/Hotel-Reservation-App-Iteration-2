@@ -16,7 +16,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
 <!-- LiveSearch -->
 <script type="text/javascript">
 $(document).ready(function()
@@ -52,7 +52,7 @@ $(document).ready(function()
 
 <body>
     <div id="wrapper">
-        <h2>Search For Guest Name</h2>
+        <h2>Guest Look-up</h2>
         <div class="search-box">
         <input type="text" autocomplete="off" placeholder="Search Name..." />
         <p>--------------------------------------------</p>
@@ -63,7 +63,7 @@ $(document).ready(function()
         <h2>Make Reservation</h2>
         <br>
         <form action="RoomReservation.php" method="post">
-            <div class='panel panel-primary'>
+            <div class='panel panel-info'>
                 <div class='panel-heading'> Check Date </div>
                 <div class='panel-body'>
                     <div class="form-group">
@@ -92,7 +92,7 @@ $(document).ready(function()
                         <label for="Additional">Comment: </label>
                         <input type="text" class="form-control" name="Additional" placeholder="....." >
                     </div>
-                    <input type='submit' value="Next"  class='btn btn-block btn-primary' value="Reserve">
+                    <input type='submit' value="Next"  class='btn btn-block btn-info' value="Reserve">
                 </div>
             </div>
         </form>

@@ -68,7 +68,7 @@
     {
         echo "<h3>";
         echo $num;
-        echo " Guests Check In Today</h3>";
+        echo " Guests Check In's Today</h3>";
 
         //echo "<table border=1px>";
         while($row = mysqli_fetch_array($result))
@@ -78,7 +78,7 @@
         }
     }
     else{
-        echo "<h3>No Check In Today</h3><br>";
+        echo "<h3>No Check In's Today</h3><br>";
         echo " ----- ";
     }
 
@@ -95,7 +95,7 @@
     {
         echo "<h3>";
         echo $num2;
-        echo "Guests Check Out Today</h3>";
+        echo "Guests Check Out's Today</h3>";
 
         //echo "<table border=1px>";
         while($row = mysqli_fetch_array($result2))
@@ -105,7 +105,7 @@
         }
     }
     else{
-        echo "<h3>No Check Out Today</h3><br>";
+        echo "<h3>No Check Out's Today</h3><br>";
     }
     //BackToMainBTN();
     mysqli_close($link);

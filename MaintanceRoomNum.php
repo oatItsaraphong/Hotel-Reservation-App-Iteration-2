@@ -14,7 +14,7 @@ session_start();
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" type="text/css" href="css/styleOne.css">
 </head>
 
 <body>
@@ -54,7 +54,7 @@ session_start();
 	{
         if(mysqli_num_rows($result) > 0)
         {
-            echo "<h3>Need Maintance</h3><br>";
+            echo "<h3>Room in Maintenance</h3><br>";
 
             while($row = mysqli_fetch_array($result))
             {
@@ -83,7 +83,7 @@ session_start();
             }
         }
         else{
-        	echo "<h3>No Maintance</h3><br>";
+        	echo "<h3>No Room in Maintance</h3><br>";
         }
 	}
 

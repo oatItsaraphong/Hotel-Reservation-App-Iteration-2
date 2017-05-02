@@ -45,7 +45,7 @@
 	        </div>
 
 	        <div>
-	        	<input type="submit" class='btn-block btn btn-primary' value="Add New Guest"></td>
+	        	<input type="submit" class='btn-block btn btn-info' value="Add New Guest"></td>
 	        </div>
 
     	</form>
