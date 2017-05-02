@@ -54,13 +54,15 @@ div.backFull {
 
 }
 
+.Fixed{
+	position: fixed;
+}
+
 div.newMain {
 	background-color: rgba(255,255,255,0.8);
 	padding-top: 10px;
 	padding-left: 10px;
 	padding-bottom: 10px;
-
-	background-attachment: fixed;
 
 	margin: auto;
 }

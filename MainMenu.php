@@ -152,7 +152,7 @@ session_start();
 
 
 	
-	<div class="newMain MainBODY col-sm-6 col-md-8 col-lg-9 " id="MainBODY"></div>
+	<div class="newMain MainBODY col-sm-6 col-md-8 col-lg-9" id="MainBODY"></div>
 	 <script src="code/sample.js" type="text/javascript"></script>
 </body>
 </html>

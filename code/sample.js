@@ -8,65 +8,79 @@ $(function(){
 	$('#AddGuestBTN').click(function(){
 		console.log("Guest");
 		$('.MainBODY').load('AddGuest.php');
+    $('html, body').animate({scrollTop: 0},'fast');
 	});
 
 	$('#ReservationBTN').click(function(){
 		console.log("Rsvp");
 		$('.MainBODY').load('ReservationCheckDate.php');
+    $('html, body').animate({scrollTop: 0},'fast');
 	});
 
 	$('#CheckInBTN').click(function(){
 		console.log("In");
 		$('.MainBODY').load('CheckInSnip.php');
+    $('html, body').animate({scrollTop: 0},'fast');
 	});
 
   $('#roomStatusBTN').click(function(){
     console.log("In");
     $('.MainBODY').load('ChangeRoomStatus.php');
+    $('html, body').animate({scrollTop: 0},'fast');
   });
 
 	$('#CheckOutBTN').click(function(){
 		console.log("Out");
 		$('.MainBODY').load('CheckOutSnip.php');
+    $('html, body').animate({scrollTop: 0},'fast');
 	});
 
 	$('.testMix').click(function(){
 		$('.phpContain').load('test.php');
+    $('html, body').animate({scrollTop: 0},'fast');
 	});
 
 	$('#SearchAllGuestBTN').click(function(){
 		$('.MainBODY').load('SearchAllGuest.php');
+    $('html, body').animate({scrollTop: 0},'fast');
 	});
 
   $('#TodayActivityBTN').click(function(){
     $('.MainBODY').load('todayAct.php');
+    $('html, body').animate({scrollTop: 0},'fast');
   });
 
   $('#addRoomMainBTN').click(function(){
     $('.MainBODY').load('AddNewRoom.html');
+    $('html, body').animate({scrollTop: 0},'fast');
   });
 
 	$('#ReportBTN').click(function(){
 		$('.MainBODY').load('Report.php');
+    $('html, body').animate({scrollTop: 0},'fast');
 	});
 
 	$('#SearchAllRoomBTN').click(function(){
 		$('.MainBODY').load('DisplayAllRoom.php');
+    $('html, body').animate({scrollTop: 0},'fast');
 	});
 
 	$('#RegisBTN').click(function(){
 		//console.log("TEst");
 		$('.MainBODY').load('Register.html');
+    $('html, body').animate({scrollTop: 0},'fast');
 	});
 
   $('#roomMainBTN').click(function(){
     //console.log("TEst");
     $('.MainBODY').load('MaintanceRoomNum.php');
+    $('html, body').animate({scrollTop: 0},'fast');
   });
 
   $('#RoomEditBTN').click(function(){
     //console.log("TEst");
     $('.MainBODY').load('EditRoomDetail.php');
+    $('html, body').animate({scrollTop: 0},'fast');
   });
 	
 
@@ -78,6 +92,7 @@ $(function(){
     	//echo "Bule";
     	$('#MainBODY').empty();
     	$('#MainBODY').append("Bule");
+      $('html, body').animate({scrollTop: 0},'fast');
     
     });
 
@@ -96,7 +111,9 @@ $(function(){
 
        }
 
+
     	});
+      $('html, body').animate({scrollTop: 0},'fast');
     });
 
     /*
@@ -140,6 +157,7 @@ $(function(){
 	         	$('.MainBODY').load('newPermissionForm.php');
        		}
     	});
+
     });
 
 
